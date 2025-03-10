@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go Out With Me?</title>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            position: relative;
+        }
+        #letter, #second-letter {
+            background: white;
+            padding: 20px;
+            border: 2px solid black;
+            width: 300px;
+            margin: auto;
+            position: relative;
+            top: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        #second-letter {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #yes-btn, #no-btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #yes-btn {
+            background-color: lightgreen;
+        }
+        #no-btn {
+            background-color: tomato;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Go Out With Me?</h1>
+    <div id="letter">
+        <p>Gửi xíu,</p>
+        <p>Liệu hồn mà chọn cho đúng nhé người đẹp!!! </p>
+        <p>Tút tin cậu sẽ đưa ra lựa chọn đúng đắn ^^</p>
+        <p>— Tút</p>
+    </div>
+    <button id="yes-btn" onclick="showSecondLetter()">YES</button>
+    <button id="no-btn" onmouseover="moveNoButton()">NO</button>
+    
+    <div id="second-letter">
+        <p>Tới Xíu,</p>
+        <p>Tút bíc là cậu sẽ chọn có mà >< </p>
+        <p>Khum seo cạ ^^</p>
+        <p>Chọn giờ sớm nhé người ơi xong nhắn Tút 🎉</p>
+        <button onclick="closeSecondLetter()">OK</button>
+    </div>
+    
+    <script>
+        function moveNoButton() {
+            let btn = document.getElementById("no-btn");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+        function showSecondLetter() {
+            document.getElementById("second-letter").style.display = "block";
+        }
+        function closeSecondLetter() {
+            document.getElementById("second-letter").style.display = "none";
+        }
+    </script>
+</body>
+</html>
